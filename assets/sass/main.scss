@@ -1,0 +1,60 @@
+@import './reset';
+@import './fonts';
+@import './daytime';
+@import './nighttime';
+$darkGrey: #303030;
+
+body {
+    color: white; mix-blend-mode: normal;
+    * {transition: all .3s}
+    .hidden {height: 0 !important; overflow: hidden; margin: 0 !important}
+    .flex {display: flex;}
+    .wrap {flex-wrap: wrap;}
+    .toggle_padding {padding-top: 56px !important; padding-bottom: 56px !important}
+    .main_wrap {
+        max-width: 1440px; width: 100%; margin: 0 auto;
+        .sections {max-width: 1093px; width: 100%; margin: 0 auto;  padding: 0 10px;}
+        .show_section {
+            width: 100%; height: 400px; padding: 74px 0; backdrop-filter:blur(40.7742px);
+            #first_stats_block {padding-right: 147px; border-right: solid 1px}
+            .stats_blocks:not(:first-child) {padding-left: 94px}
+            .stats_blocks {
+                .block:not(:last-child) {
+                    padding-bottom: 42px;
+                }
+                .block {
+                    .stats_title {padding-bottom: 9px}
+                }
+            }
+        }
+        .random_quotes {
+            width: 573px; padding-top: 56px; transition: all .4s ease-in-out; height: 414px;
+            .text {
+                #quote {line-height: 28px;}
+                #author {padding-top: 13px}
+            }
+            .reload {padding-left: 16px}
+        }
+        .clock {
+            align-items: flex-end; justify-content: space-between; margin: 0 auto; padding-bottom: 98px;
+            .dateTime {height: 288px}
+            .greetings {
+                display: flex; align-items: center;
+                #greeting_icon {margin-right: 16px}
+            }
+            .time.flex {
+                margin: 16px 0;
+                #timezone {padding: 0 0 27px 11px; font-size: 40px; line-height: 28px; font-weight: 300}
+            }
+            .btn {
+                align-items: center; cursor: pointer; height: 56px; border-radius: 28px; border: none; background-color: #fff; color: rgba(0, 0, 0, .5); text-transform: uppercase; font-weight: 700; padding: 15px 9px 13px 21px; letter-spacing: 5px;
+                .btn-text {width: 63px;}
+                #arrow {display: inline-block; margin-left: 13px;}
+                .arrow_down {transform: rotate(180deg);}
+                .arrow_up {transform: rotate(0);}
+            }
+        }
+    }
+}
+@import './tablet';
+@import './mobile';

@@ -1,0 +1,47 @@
+@media screen and (max-width: 768px) {
+    body {
+        .toggle_padding {padding-top: 153px !important; padding-bottom: 64px !important}
+        .main_wrap {
+            .sections {padding-left: 64px}
+            .show_section {
+                padding: 119px 0; height: 440px;
+                #first_stats_block {padding-right: 80px; border: none}
+                .stats_blocks:not(:first-child) {padding-left: 0}
+                .stats_blocks {
+                    .block:not(:last-child) {
+                        padding-bottom: 48px;
+                    }
+                    .block {
+                        .stats_title {padding-bottom: 0}
+                    }
+                }
+            }
+            .random_quotes {
+                padding-top: 80px; height: 593px;
+            }
+            .clock {
+                padding-bottom: 64px;
+                .dateTime {width: 100%; height: 231px}
+                .time.flex {
+                    margin: 0;
+                    #timezone {font-size: 32px}
+                }
+                .btn-block {padding-top: 80px;}
+            }
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    body {
+        h1 {font-size: 150px}
+        .main_wrap {
+            .sections {padding-left: 10px;}
+            .random_quotes {width: 500px;}
+            .clock {
+                .time.flex {
+                    #timezone {font-size: 25px}
+                }
+            }
+        }
+    }
+}

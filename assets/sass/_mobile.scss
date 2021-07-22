@@ -1,0 +1,44 @@
+@media screen and (max-width: 550px) {
+    body {
+        h1 {font-size: 100px; line-height: 100px; letter-spacing: -2.5px;}
+        .hide-on-mobile {display: none;}
+        .toggle_padding {padding-top: 99px !important; padding-bottom: 40px !important}
+        .main_wrap {
+            .sections {padding-left: 26px}
+            .show_section {
+                padding: 48px 0; height: 256px;
+                .town_stats {flex-direction: column;}
+                #first_stats_block {padding-right: 0;}
+                .stats_blocks {
+                    width: 100%;
+                    .block:not(:last-child) {
+                        padding-bottom: 16px;
+                    }
+                    .block {
+                        display: flex; justify-content: space-between; padding-bottom: 16px;
+                        .stats_title {padding-bottom: 0}
+                    }
+                }
+            }
+            .random_quotes {
+                width: 324px; padding-top: 32px; height: 355px;
+                .text {
+                    #quote {font-size: 12px; line-height: 22px}
+                }
+            }
+            .clock {
+                padding-bottom: 40px;
+                .dateTime {height: 185px}
+                .time.flex {
+                    #timezone {font-size: 15px; padding: 0 0 49px 5px;}
+                }
+                .btn-block {padding-top: 48px;}
+                .btn {
+                    padding: 13px 4px 12px 17px; height: 39px;
+                    #arrow {height: 32px; width: 32px}
+                    .btn-text {width: 47px}
+                }
+            }
+        }
+    }
+}

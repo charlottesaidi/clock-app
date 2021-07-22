@@ -1,0 +1,11 @@
+.nightime_background {background: url('../images/desktop/bg-image-nighttime.jpg') no-repeat;}
+.dark_background {background: rgba(0, 0, 0, .5);}
+.light_border {border-color: rgba(255,255,255,.2);}
+
+@media screen and (max-width: 768px) {
+    .nightime_background {background: url('../images/tablet/bg-image-nighttime.jpg') no-repeat;}
+    .light_border {border-color: transparent}
+}
+@media screen and (max-width: 375px) {
+    .nightime_background {background: url('../images/mobile/bg-image-nighttime.jpg') no-repeat;}
+}

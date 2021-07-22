@@ -1,0 +1,613 @@
+/*
+|---------------------------------------------
+| RESET
+|---------------------------------------------
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clear:before, .clear:after {
+  content: " ";
+  display: table;
+}
+
+.clear:after {
+  clear: both;
+}
+
+.clear {
+  *zoom: 1;
+}
+
+/*
+|-----------------------------------
+|   FONT
+|-----------------------------------
+*/
+/* cyrillic-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v3/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+body h1, body h2, body h3, body h5 {
+  font-weight: 700;
+}
+body h3, body h4, body h6 {
+  text-transform: uppercase;
+}
+body h3, body h4, body h5, body h6 {
+  line-height: 28px;
+}
+body h1 {
+  font-size: 200px;
+  line-height: 200px;
+  letter-spacing: -5px;
+}
+body h2 {
+  font-size: 56px;
+  line-height: 68px;
+}
+body h3 {
+  font-size: 24px;
+  letter-spacing: 4.8px;
+}
+body h4 {
+  font-size: 20px;
+  letter-spacing: 4px;
+}
+body h5 {
+  font-size: 18px;
+}
+body h6 {
+  font-size: 15px;
+  letter-spacing: 3px;
+}
+body button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  body h1 {
+    font-size: 175px;
+    line-height: 175px;
+    letter-spacing: -4px;
+  }
+  body h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  body h3, body h4 {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+  body h5 {
+    font-size: 18px;
+  }
+  body h6 {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (max-width: 550px) {
+  body {
+    font-size: 12px;
+    line-height: 22px;
+  }
+  body h3, body h5, body h6 {
+    line-height: 28px;
+  }
+  body h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  body h3 {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+  body h4 {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 3px;
+  }
+  body h5 {
+    font-size: 12px;
+    line-height: 22px;
+  }
+  body h6 {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  body button {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 3px;
+  }
+}
+.daytime_background {
+  background: url("../images/desktop/bg-image-daytime.jpg") no-repeat;
+}
+
+.background-filter {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.light_background {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.dark_police {
+  color: #303030;
+}
+
+.dark_border {
+  border-color: rgba(48, 48, 48, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .daytime_background {
+    background: url("../images/tablet/bg-image-daytime.jpg") no-repeat;
+  }
+
+  .dark_border {
+    border-color: transparent;
+  }
+}
+@media screen and (max-width: 375px) {
+  .daytime_background {
+    background: url("../images/mobile/bg-image-daytime.jpg") no-repeat;
+  }
+}
+.nightime_background {
+  background: url("../images/desktop/bg-image-nighttime.jpg") no-repeat;
+}
+
+.dark_background {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.light_border {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .nightime_background {
+    background: url("../images/tablet/bg-image-nighttime.jpg") no-repeat;
+  }
+
+  .light_border {
+    border-color: transparent;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nightime_background {
+    background: url("../images/mobile/bg-image-nighttime.jpg") no-repeat;
+  }
+}
+body {
+  color: white;
+  mix-blend-mode: normal;
+}
+body * {
+  transition: all 0.3s;
+}
+body .hidden {
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+}
+body .flex {
+  display: flex;
+}
+body .wrap {
+  flex-wrap: wrap;
+}
+body .toggle_padding {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+body .main_wrap {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+body .main_wrap .sections {
+  max-width: 1093px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+body .main_wrap .show_section {
+  width: 100%;
+  height: 400px;
+  padding: 74px 0;
+  backdrop-filter: blur(40.7742px);
+}
+body .main_wrap .show_section #first_stats_block {
+  padding-right: 147px;
+  border-right: solid 1px;
+}
+body .main_wrap .show_section .stats_blocks:not(:first-child) {
+  padding-left: 94px;
+}
+body .main_wrap .show_section .stats_blocks .block:not(:last-child) {
+  padding-bottom: 42px;
+}
+body .main_wrap .show_section .stats_blocks .block .stats_title {
+  padding-bottom: 9px;
+}
+body .main_wrap .random_quotes {
+  width: 573px;
+  padding-top: 56px;
+  transition: all 0.4s ease-in-out;
+  height: 414px;
+}
+body .main_wrap .random_quotes .text #quote {
+  line-height: 28px;
+}
+body .main_wrap .random_quotes .text #author {
+  padding-top: 13px;
+}
+body .main_wrap .random_quotes .reload {
+  padding-left: 16px;
+}
+body .main_wrap .clock {
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-bottom: 98px;
+}
+body .main_wrap .clock .dateTime {
+  height: 288px;
+}
+body .main_wrap .clock .greetings {
+  display: flex;
+  align-items: center;
+}
+body .main_wrap .clock .greetings #greeting_icon {
+  margin-right: 16px;
+}
+body .main_wrap .clock .time.flex {
+  margin: 16px 0;
+}
+body .main_wrap .clock .time.flex #timezone {
+  padding: 0 0 27px 11px;
+  font-size: 40px;
+  line-height: 28px;
+  font-weight: 300;
+}
+body .main_wrap .clock .btn {
+  align-items: center;
+  cursor: pointer;
+  height: 56px;
+  border-radius: 28px;
+  border: none;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 15px 9px 13px 21px;
+  letter-spacing: 5px;
+}
+body .main_wrap .clock .btn .btn-text {
+  width: 63px;
+}
+body .main_wrap .clock .btn #arrow {
+  display: inline-block;
+  margin-left: 13px;
+}
+body .main_wrap .clock .btn .arrow_down {
+  transform: rotate(180deg);
+}
+body .main_wrap .clock .btn .arrow_up {
+  transform: rotate(0);
+}
+
+@media screen and (max-width: 768px) {
+  body .toggle_padding {
+    padding-top: 153px !important;
+    padding-bottom: 64px !important;
+  }
+  body .main_wrap .sections {
+    padding-left: 64px;
+  }
+  body .main_wrap .show_section {
+    padding: 119px 0;
+    height: 440px;
+  }
+  body .main_wrap .show_section #first_stats_block {
+    padding-right: 80px;
+    border: none;
+  }
+  body .main_wrap .show_section .stats_blocks:not(:first-child) {
+    padding-left: 0;
+  }
+  body .main_wrap .show_section .stats_blocks .block:not(:last-child) {
+    padding-bottom: 48px;
+  }
+  body .main_wrap .show_section .stats_blocks .block .stats_title {
+    padding-bottom: 0;
+  }
+  body .main_wrap .random_quotes {
+    padding-top: 80px;
+    height: 593px;
+  }
+  body .main_wrap .clock {
+    padding-bottom: 64px;
+  }
+  body .main_wrap .clock .dateTime {
+    width: 100%;
+    height: 231px;
+  }
+  body .main_wrap .clock .time.flex {
+    margin: 0;
+  }
+  body .main_wrap .clock .time.flex #timezone {
+    font-size: 32px;
+  }
+  body .main_wrap .clock .btn-block {
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width: 640px) {
+  body h1 {
+    font-size: 150px;
+  }
+  body .main_wrap .sections {
+    padding-left: 10px;
+  }
+  body .main_wrap .random_quotes {
+    width: 500px;
+  }
+  body .main_wrap .clock .time.flex #timezone {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 550px) {
+  body h1 {
+    font-size: 100px;
+    line-height: 100px;
+    letter-spacing: -2.5px;
+  }
+  body .hide-on-mobile {
+    display: none;
+  }
+  body .toggle_padding {
+    padding-top: 99px !important;
+    padding-bottom: 40px !important;
+  }
+  body .main_wrap .sections {
+    padding-left: 26px;
+  }
+  body .main_wrap .show_section {
+    padding: 48px 0;
+    height: 256px;
+  }
+  body .main_wrap .show_section .town_stats {
+    flex-direction: column;
+  }
+  body .main_wrap .show_section #first_stats_block {
+    padding-right: 0;
+  }
+  body .main_wrap .show_section .stats_blocks {
+    width: 100%;
+  }
+  body .main_wrap .show_section .stats_blocks .block:not(:last-child) {
+    padding-bottom: 16px;
+  }
+  body .main_wrap .show_section .stats_blocks .block {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+  }
+  body .main_wrap .show_section .stats_blocks .block .stats_title {
+    padding-bottom: 0;
+  }
+  body .main_wrap .random_quotes {
+    width: 324px;
+    padding-top: 32px;
+    height: 355px;
+  }
+  body .main_wrap .random_quotes .text #quote {
+    font-size: 12px;
+    line-height: 22px;
+  }
+  body .main_wrap .clock {
+    padding-bottom: 40px;
+  }
+  body .main_wrap .clock .dateTime {
+    height: 185px;
+  }
+  body .main_wrap .clock .time.flex #timezone {
+    font-size: 15px;
+    padding: 0 0 49px 5px;
+  }
+  body .main_wrap .clock .btn-block {
+    padding-top: 48px;
+  }
+  body .main_wrap .clock .btn {
+    padding: 13px 4px 12px 17px;
+    height: 39px;
+  }
+  body .main_wrap .clock .btn #arrow {
+    height: 32px;
+    width: 32px;
+  }
+  body .main_wrap .clock .btn .btn-text {
+    width: 47px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

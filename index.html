@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    
+    <title>Frontend Mentor | Clock App</title>
+  </head>
+  <body>
+
+    <main>
+
+      <div id="background-filter" class="main_wrap">
+
+        <!-- QUOTES -->
+        <section>
+          <div class="sections">
+            <div id="quote_section" class="random_quotes flex">
+              <div class="text">
+                <q id="quote"></q>
+                <h5 id="author"></h5>
+              </div>
+              <div class="reload" onclick="displayRandomQuotes()">
+                <img src="assets/images/desktop/icon-refresh.svg" alt="Refresh icon" class="icon-refresh">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DATETIME -->
+        <section>
+          <div id="time_section" class="sections clock flex wrap">
+            <div class="dateTime">
+              <h4 class="greetings"><img src="" alt="Moon icon for the night. Sun icon for the day." id="greeting_icon"><span id="greet"></span> <span class="hide-on-mobile">, it's currently</span></h4>
+              <div class="time flex">
+                <h1><span id="time" onload="showTime()"></span><span id="timezone"></span></h1>
+              </div>
+              <h3 class="location">in <span id="town"></span>, <span id="country"></span></h3>
+            </div>
+            <div class="btn-block">
+              <button class="btn flex" onclick="showOrHide()"><span id="more_less" class="btn-text">More</span><img src="assets/images/desktop/icon-arrow-up.svg" id="arrow" class="arrow_down" alt="Button arrow"></button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="main_wrap">
+
+        <!-- TIMEZONE STATS -->
+        <section id="hidden_section" class="hidden">
+          <div class="sections town_stats flex">
+            <div class="stats_blocks" id="first_stats_block">
+              <div class="block">
+                <h6 class="stats_title">Current timezone</h6>
+                <h2 id="curr_timezone"></h2>
+              </div>
+              <div class="block">
+                <h6 class="stats_title">Day of the year</h6>
+                <h2 id="year_day"></h2>
+              </div>
+            </div>
+            <div class="stats_blocks">
+              <div class="block">
+                <h6 class="stats_title">Day of the week</h6>
+                <h2 id="week_day"></h2>
+              </div>
+              <div class="block">
+                <h6 class="stats_title">Week number</h6>
+                <h2 id="week_number"></h2>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      </div>
+
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    
+  </body>
+</html>
