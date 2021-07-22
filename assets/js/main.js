@@ -65,7 +65,7 @@ function dayOrNight() {
             }
         }
     xhttp.responseType = "json";
-    xhttp.open("GET", "http://worldtimeapi.org/api/ip", true);
+    xhttp.open("GET", "https://worldtimeapi.org/api/ip");
     xhttp.send();
 }
 
