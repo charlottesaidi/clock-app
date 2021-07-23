@@ -50,7 +50,7 @@ function dayOrNight() {
             var hiddenStatSection = document.getElementById("hidden_section");
             var firstStatBlockBorder = document.getElementById("first_stats_block");
 
-            if(time.getHours() >= 5 && time.getHours() <= 12 ) {
+            if(time.getHours() >= 5 && time.getHours() <= 18 ) {
                 document.body.classList.add('daytime_background');
                 greetingIcon.src = 'assets/images/desktop/icon-sun.svg';
                 backgroundFilterBlock.classList.add('background-filter');
