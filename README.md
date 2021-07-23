@@ -1,4 +1,4 @@
-# Frontend Mentor - Planets fact site solution
+# Frontend Mentor - Click App solution
 
 Solution to the [Clock App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM). A small clock app using World Time and Geolocation APIs. 
 
