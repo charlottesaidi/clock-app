@@ -2,6 +2,8 @@
 
 Solution to the [Clock App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM). A small clock app using World Time and Geolocation APIs. 
 
+Update : Had to "ditch" the World Time api, I think the thing is down or extra buggy, dunno. Had to revert to pure JS to get the date and calculate datas like timezone, day of the year, etc ...
+
 ## Table of contents
 
 - [Overview](#overview)
@@ -52,5 +54,9 @@ Users should be able to:
 
 ### Useful resources
 
-- [StackOverflow](https://stackoverflow.com/)
-- [CSS-Tricks](https://css-tricks.com/)
+- [StackOverflow](https://stackoverflow.com/) - guys on this site provide really useful functions (like maths for the Date object)
+- [CSS-Tricks](https://css-tricks.com/) -found a lot of before/after styling tricks
+- [MomentJs](https://momentjs.com/) - helped easily get the timezone abbreviation
+
+### Credits  
+Many thanks to [Amon](https://www.frontendmentor.io/profile/A-amon), on FrontEnd Mentor, who gave me useful advices and suggestions, js logic and css I hadn't thought about while working on this project on first try.

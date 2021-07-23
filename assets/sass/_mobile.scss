@@ -6,7 +6,7 @@
         .main_wrap {
             .sections {padding-left: 26px}
             .show_section {
-                padding: 48px 0; height: 256px;
+                padding: 48px 0 !important; height: 256px !important;
                 .town_stats {flex-direction: column;}
                 #first_stats_block {padding-right: 0;}
                 .stats_blocks {

@@ -12,7 +12,7 @@
 
     <main>
 
-      <div id="background-filter" class="main_wrap">
+      <div class="main_wrap">
 
         <!-- QUOTES -->
         <section>
@@ -22,8 +22,10 @@
                 <q id="quote"></q>
                 <h5 id="author"></h5>
               </div>
-              <div class="reload" onclick="displayRandomQuotes()">
-                <img src="assets/images/desktop/icon-refresh.svg" alt="Refresh icon" class="icon-refresh">
+              <div class="reload">
+                <button onclick="displayRandomQuotes()">
+                  <img src="assets/images/desktop/icon-refresh.svg" alt="Refresh icon" class="icon-refresh">
+                </button>
               </div>
             </div>
           </div>
@@ -33,7 +35,7 @@
         <section>
           <div id="time_section" class="sections clock flex wrap">
             <div class="dateTime">
-              <h4 class="greetings"><img src="" alt="Moon icon for the night. Sun icon for the day." id="greeting_icon"><span id="greet"></span> <span class="hide-on-mobile">, it's currently</span></h4>
+              <h4 class="greetings"><span id="greet"></span> <span class="hide-on-mobile">, it's currently</span></h4>
               <div class="time flex">
                 <h1><span id="time" onload="showTime()"></span><span id="timezone"></span></h1>
               </div>
@@ -78,7 +80,8 @@
       </div>
 
     </main>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
     <script src="assets/js/main.js"></script>
     
   </body>

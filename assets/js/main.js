@@ -1,4 +1,4 @@
-    window.onload = function() {
+window.onload = function() {
     displayRandomQuotes();
     dayOrNight();
     getLocation();
@@ -16,57 +16,39 @@ function displayRandomQuotes() {
     xhttp.responseType = "json";
     xhttp.open("GET", "https://api.quotable.io/random", true);
     xhttp.send();
-} 
+}
+
+
 
 function dayOrNight() {
-    const xhttp = new XMLHttpRequest();
-        xhttp.onload  = function() {
-            const time = new Date(this.response.datetime);
-            const timezone = this.response.abbreviation;
-            const currTimezone = this.response.timezone;
-            const yearDay = this.response.day_of_year;
-            const weekDay = this.response.day_of_week;
-            const weekNumber = this.response.week_number;
+        // LIVE CLOCK
+        showTime()
 
-            showTime();
+        // DISPLAY INFORMATIONS
+        const time = new Date();
+        const timezone = getTimeZoneAbbr(time);
+        const weekDay = time.getDay();
+        const weekNumber = time.getWeekNumber();
+        const yearDay = getDayNumber(time);
 
-            // document.getElementById("time").innerHTML = time.format("HH:MM");
-            document.getElementById("timezone").innerHTML = timezone;
-            document.getElementById("curr_timezone").innerHTML = currTimezone;
-            document.getElementById("year_day").innerHTML = yearDay;
-            document.getElementById("week_day").innerHTML = weekDay;
-            document.getElementById("week_number").innerHTML = weekNumber;
+        document.getElementById("timezone").innerHTML = timezone;
+        document.getElementById("year_day").innerHTML = yearDay;
+        document.getElementById("week_day").innerHTML = weekDay;
+        document.getElementById("week_number").innerHTML = weekNumber;
 
-            if(time.getHours() >= 5 && time.getHours() <= 12 ) {
-                document.getElementById("greet").innerHTML = "Good morning";
-            } else if(time.getHours() >= 12 && time.getHours() <= 18 ) {
-                document.getElementById("greet").innerHTML = "Good afternoon";
-            } else {
-                document.getElementById("greet").innerHTML = "Good evening";
-            }
-
-            var greetingIcon = document.getElementById("greeting_icon");
-            var backgroundFilterBlock = document.getElementById("background-filter");
-            var hiddenStatSection = document.getElementById("hidden_section");
-            var firstStatBlockBorder = document.getElementById("first_stats_block");
-
-            if(time.getHours() >= 5 && time.getHours() <= 18 ) {
-                document.body.classList.add('daytime_background');
-                greetingIcon.src = 'assets/images/desktop/icon-sun.svg';
-                backgroundFilterBlock.classList.add('background-filter');
-                hiddenStatSection.classList.add('light_background');
-                hiddenStatSection.classList.add('dark_police');
-                firstStatBlockBorder.classList.add('dark_border');
-            } else {
-                document.body.classList.add('nightime_background');
-                greetingIcon.src = 'assets/images/desktop/icon-moon.svg';
-                hiddenStatSection.classList.add('dark_background');
-                firstStatBlockBorder.classList.add('light_border');
-            }
+        if(time.getHours() >= 5 && time.getHours() <= 12 ) {
+            document.getElementById("greet").innerHTML = "Good morning";
+        } else if(time.getHours() >= 12 && time.getHours() <= 18 ) {
+            document.getElementById("greet").innerHTML = "Good afternoon";
+        } else {
+            document.getElementById("greet").innerHTML = "Good evening";
         }
-    xhttp.responseType = "json";
-    xhttp.open("GET", "https://worldtimeapi.org/api/ip");
-    xhttp.send();
+
+        if(time.getHours() >= 5 && time.getHours() <= 18 ) {
+            document.body.classList.add('daytime_background');
+        } else {
+            document.body.classList.add('nightime_background');
+        }
 }
 
 function getLocation() {
@@ -74,9 +56,12 @@ function getLocation() {
         xhttp.onload  = function() {
             const town = this.response.city;
             const country = this.response.country_code;
+            const currTimezone = this.response.time_zone;
             document.getElementById("town").innerHTML = town;
             document.getElementById("country").innerHTML = country;
+            document.getElementById("curr_timezone").innerHTML = currTimezone;
         }
+        
     xhttp.responseType = "json";
     xhttp.open("GET", "https://freegeoip.app/json/", true);
     xhttp.send();
@@ -93,6 +78,27 @@ function showTime() {
     setInterval(showTime, 1000);
 }
 
+Date.prototype.getWeekNumber = function(){
+    var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+    var dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+};
+
+function getDayNumber(time) {
+    var start = new Date(time.getFullYear(), 0, 0);
+    var diff = (time - start) + ((start.getTimezoneOffset() - time.getTimezoneOffset()) * 60 * 1000);
+    var oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay)
+}
+
+function getTimeZoneAbbr(time) {
+    var timeZone = moment.tz.guess();
+    var timeZoneOffset = time.getTimezoneOffset();
+    return moment.tz.zone(timeZone).abbr(timeZoneOffset);
+}
+
 function showOrHide() {
     var hiddenStatSection = document.getElementById('hidden_section');
     var randomQuoteSection = document.getElementById('quote_section');
@@ -100,33 +106,10 @@ function showOrHide() {
     var moreLessBtn = document.getElementById('more_less');
     var btnArrow = document.getElementById('arrow');
 
-    if(hiddenStatSection.classList.contains("hidden")) {
-        hiddenStatSection.classList.replace("hidden", "show_section");
-    } else {
-        hiddenStatSection.classList.replace("show_section", "hidden");
-    }
+    btnArrow.classList.toggle('arrow_up');
+    hiddenStatSection.classList.toggle('show_section');
+    randomQuoteSection.classList.toggle('hidden');
+    dateTimeSection.classList.toggle('toggle_padding');
 
-    if(randomQuoteSection.classList.contains("random_quotes")) {
-        randomQuoteSection.classList.replace('random_quotes', "hidden");
-    } else {
-        randomQuoteSection.classList.replace( "hidden", 'random_quotes');
-    }
-    
-    if(dateTimeSection.classList.contains('toggle_padding')) {
-        dateTimeSection.classList.remove('toggle_padding');
-    } else {
-        dateTimeSection.classList.add('toggle_padding');
-    }
-    
-    if(btnArrow.classList.contains('arrow_down')) {
-        btnArrow.classList.replace('arrow_down', "arrow_up")
-    } else {
-        btnArrow.classList.replace("arrow_up", 'arrow_down')
-    }
-
-    if(moreLessBtn.innerHTML == "More") {
-        moreLessBtn.innerHTML = "Less"
-    } else {
-        moreLessBtn.innerHTML = "More"
-    }
+    (moreLessBtn.innerHTML == "More" ? moreLessBtn.innerHTML = "Less" : moreLessBtn.innerHTML = "More");
 }

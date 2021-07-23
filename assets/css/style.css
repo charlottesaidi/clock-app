@@ -231,7 +231,7 @@ body h6 {
   font-size: 15px;
   letter-spacing: 3px;
 }
-body button {
+body button:not(.reload) {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 28px;
@@ -290,7 +290,7 @@ body button {
     font-size: 10px;
     letter-spacing: 2px;
   }
-  body button {
+  body button:not(.reload) {
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 3px;
@@ -299,22 +299,40 @@ body button {
 .daytime_background {
   background: url("../images/desktop/bg-image-daytime.jpg") no-repeat;
   background-size: cover;
+  position: relative;
 }
-
-.background-filter {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.light_background {
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.dark_police {
+.daytime_background #hidden_section {
   color: #303030;
 }
-
-.dark_border {
+.daytime_background #hidden_section {
+  background: rgba(255, 255, 255, 0.7);
+}
+.daytime_background #first_stats_block {
   border-color: rgba(48, 48, 48, 0.2);
+}
+.daytime_background .greetings {
+  position: relative;
+}
+.daytime_background .greetings::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/desktop/icon-sun.svg");
+  height: 24px;
+  width: 24px;
+}
+
+.daytime_background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
 }
 
 @media screen and (max-width: 768px) {
@@ -322,8 +340,7 @@ body button {
     background: url("../images/tablet/bg-image-daytime.jpg") no-repeat;
     background-size: cover;
   }
-
-  .dark_border {
+  .daytime_background .dark_border {
     border-color: transparent;
   }
 }
@@ -337,13 +354,24 @@ body button {
   background: url("../images/desktop/bg-image-nighttime.jpg") no-repeat;
   background-size: cover;
 }
-
-.dark_background {
+.nightime_background #hidden_section {
   background: rgba(0, 0, 0, 0.5);
 }
-
-.light_border {
+.nightime_background #first_stats_block {
   border-color: rgba(255, 255, 255, 0.2);
+}
+.nightime_background .greetings {
+  position: relative;
+}
+.nightime_background .greetings::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../images/desktop/icon-moon.svg");
+  height: 24px;
+  width: 22px;
 }
 
 @media screen and (max-width: 768px) {
@@ -351,8 +379,7 @@ body button {
     background: url("../images/tablet/bg-image-nighttime.jpg") no-repeat;
     background-size: cover;
   }
-
-  .light_border {
+  .nightime_background .light_border {
     border-color: transparent;
   }
 }
@@ -366,13 +393,14 @@ body {
   color: white;
   mix-blend-mode: normal;
 }
-body * {
+body *:not(.reload > button) {
   transition: all 0.3s;
 }
 body .hidden {
   height: 0 !important;
   overflow: hidden;
   margin: 0 !important;
+  padding: 0 !important;
 }
 body .flex {
   display: flex;
@@ -397,8 +425,8 @@ body .main_wrap .sections {
 }
 body .main_wrap .show_section {
   width: 100%;
-  height: 400px;
-  padding: 74px 0;
+  height: 400px !important;
+  padding: 74px 0 !important;
   backdrop-filter: blur(40.7742px);
 }
 body .main_wrap .show_section #first_stats_block {
@@ -417,7 +445,6 @@ body .main_wrap .show_section .stats_blocks .block .stats_title {
 body .main_wrap .random_quotes {
   width: 573px;
   padding-top: 56px;
-  transition: all 0.4s ease-in-out;
   height: 414px;
 }
 body .main_wrap .random_quotes .text #quote {
@@ -428,6 +455,11 @@ body .main_wrap .random_quotes .text #author {
 }
 body .main_wrap .random_quotes .reload {
   padding-left: 16px;
+}
+body .main_wrap .random_quotes .reload button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 body .main_wrap .clock {
   align-items: flex-end;
@@ -442,8 +474,8 @@ body .main_wrap .clock .greetings {
   display: flex;
   align-items: center;
 }
-body .main_wrap .clock .greetings #greeting_icon {
-  margin-right: 16px;
+body .main_wrap .clock .greetings #greet {
+  padding-left: 40px;
 }
 body .main_wrap .clock .time.flex {
   margin: 16px 0;
@@ -480,6 +512,9 @@ body .main_wrap .clock .btn .arrow_down {
 body .main_wrap .clock .btn .arrow_up {
   transform: rotate(0);
 }
+body .main_wrap .clock .btn:hover #arrow {
+  opacity: 0.5;
+}
 
 @media screen and (max-width: 768px) {
   body .toggle_padding {
@@ -490,8 +525,8 @@ body .main_wrap .clock .btn .arrow_up {
     padding-left: 64px;
   }
   body .main_wrap .show_section {
-    padding: 119px 0;
-    height: 440px;
+    padding: 119px 0 !important;
+    height: 440px !important;
   }
   body .main_wrap .show_section #first_stats_block {
     padding-right: 80px;
@@ -558,8 +593,8 @@ body .main_wrap .clock .btn .arrow_up {
     padding-left: 26px;
   }
   body .main_wrap .show_section {
-    padding: 48px 0;
-    height: 256px;
+    padding: 48px 0 !important;
+    height: 256px !important;
   }
   body .main_wrap .show_section .town_stats {
     flex-direction: column;
