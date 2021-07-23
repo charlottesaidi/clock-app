@@ -298,6 +298,7 @@ body button {
 }
 .daytime_background {
   background: url("../images/desktop/bg-image-daytime.jpg") no-repeat;
+  background-size: cover;
 }
 
 .background-filter {
@@ -319,6 +320,7 @@ body button {
 @media screen and (max-width: 768px) {
   .daytime_background {
     background: url("../images/tablet/bg-image-daytime.jpg") no-repeat;
+    background-size: cover;
   }
 
   .dark_border {
@@ -328,10 +330,12 @@ body button {
 @media screen and (max-width: 375px) {
   .daytime_background {
     background: url("../images/mobile/bg-image-daytime.jpg") no-repeat;
+    background-size: cover;
   }
 }
 .nightime_background {
   background: url("../images/desktop/bg-image-nighttime.jpg") no-repeat;
+  background-size: cover;
 }
 
 .dark_background {
@@ -345,6 +349,7 @@ body button {
 @media screen and (max-width: 768px) {
   .nightime_background {
     background: url("../images/tablet/bg-image-nighttime.jpg") no-repeat;
+    background-size: cover;
   }
 
   .light_border {
@@ -354,6 +359,7 @@ body button {
 @media screen and (max-width: 375px) {
   .nightime_background {
     background: url("../images/mobile/bg-image-nighttime.jpg") no-repeat;
+    background-size: cover;
   }
 }
 body {
