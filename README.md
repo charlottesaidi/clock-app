@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL]()  
-- [Live Site URL]() 
+- [Solution URL](https://www.frontendmentor.io/solutions/responsive-clock-app-html5-sass-and-vanilla-js-with-apis-TgsRp316u)  
+- [Live Site URL](https://charlottesaidi.github.io/clock-app/) 
 
 ## My process
 
