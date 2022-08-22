@@ -393,6 +393,9 @@ body {
   color: white;
   mix-blend-mode: normal;
 }
+body, body main {
+  min-height: 100vh;
+}
 body *:not(.reload > button) {
   transition: all 0.3s;
 }

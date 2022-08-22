@@ -56,14 +56,14 @@ function getLocation() {
         xhttp.onload  = function() {
             const town = this.response.city;
             const country = this.response.country_code;
-            const currTimezone = this.response.time_zone;
+            const currTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;;
             document.getElementById("town").innerHTML = town;
             document.getElementById("country").innerHTML = country;
             document.getElementById("curr_timezone").innerHTML = currTimezone;
         }
         
     xhttp.responseType = "json";
-    xhttp.open("GET", "https://freegeoip.app/json/", true);
+    xhttp.open("GET", "http://api.ipstack.com/check?access_key=ecba014f817804a5849fb28c0a1273d2", true);
     xhttp.send();
 }
 
